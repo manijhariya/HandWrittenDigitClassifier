@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Upload</title>
+</head>
+<body>
+<img src = "/static/digiscan.png" align = "middle" height = "200" width = "250">
+<br><br>
+<form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+    <input type=file name=photo>
+    <input type="submit">
+</form>
+<br>
+<table>
+    	<tr>
+			<th><h2>result is :-</h2></th>
+    	</tr>
+        	{% if data %}
+		  	{% for row in data %}
+        <tr>
+            <td> {{ row }}</td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+    </table>
+</body>
+</html>
